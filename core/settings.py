@@ -18,6 +18,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 load_dotenv(BASE_DIR / '.env')
 
+DEFAULT_FILE_STORAGE = 'core.azure_storage.AzureMediaStorage'
+STATICFILES_STORAGE = 'core.azure_storage.AzureStaticStorage'
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -150,13 +153,16 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
+AZURE_ACCOUNT_NAME = os.getenv('AZURE_ACCOUNT_NAME')
+AZURE_ACCOUNT_KEY = os.getenv('AZURE_ACCOUNT_KEY')
+AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
 
-STATIC_URL = '/static/'
+
+STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-MEDIA_URL = '/media/'
+MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/media/'
 MEDIA_ROOT = BASE_DIR / 'mediafiles'
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
