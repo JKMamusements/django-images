@@ -35,3 +35,7 @@ def upload_view(request):
         logger.warning(request.FILES)
 
     return redirect('images-index')
+
+
+def testing(request):
+    return render(request, "test.html", {})
