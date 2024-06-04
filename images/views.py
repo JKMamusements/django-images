@@ -40,5 +40,5 @@ def upload_view(request):
 def testing(request):
     return render(request, "test.html", {})
 
-def testing(request):
+def home(request):
     return render(request, "home.html", {})
