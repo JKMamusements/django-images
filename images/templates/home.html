@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./home.css">
+  <title>Jkm Amusements</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: "#da373d",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<nav class="fixed w-full z-50 divide-y-2 py-2 bg-slate-700">
+  <div class="container mx-auto flex justify-between items-center">
+    <div class="text-white text-2xl font-bold">BrandName</div>
+    <div class="hidden md:flex space-x-4">
+      <a href="#home" class="text-white hover:text-yellow-500">Home</a>
+      <a href="#about" class="text-white hover:text-yellow-500">About</a>
+      <a href="#services" class="text-white hover:text-yellow-500">Services</a>
+      <a href="#contact" class="text-white hover:text-yellow-500">Contact</a>
+    </div>
+    <div>
+      <!-- Facebook -->
+      <button type="button" data-twe-ripple-init data-twe-ripple-color="light"
+        class="mb-2 inline-block rounded bg-[#1877f2] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
+        <span class="[&>svg]:h-4 [&>svg]:w-4">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 320 512">
+            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+            <path
+              d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />
+          </svg>
+        </span>
+      </button>
+
+      <!-- Instagram -->
+      <button type="button" data-twe-ripple-init data-twe-ripple-color="light"
+        class="mb-2 inline-block rounded bg-[#c13584] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
+        <span class="[&>svg]:h-4 [&>svg]:w-4">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
+            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+            <path
+              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+          </svg>
+        </span>
+      </button>
+
+      <!-- Google -->
+      <button type="button" data-twe-ripple-init data-twe-ripple-color="light"
+        class="mb-2 inline-block rounded bg-[#ea4335] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
+        <span class="[&>svg]:h-4 [&>svg]:w-4">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 488 512">
+            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+            <path
+              d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" />
+          </svg>
+        </span>
+      </button>
+
+      <!-- Linkedin -->
+      <button type="button" data-twe-ripple-init data-twe-ripple-color="light"
+        class="mb-2 inline-block rounded bg-[#0077b5] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
+        <span class="[&>svg]:h-4 [&>svg]:w-4">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
+            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+            <path
+              d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
+          </svg>
+        </span>
+      </button>
+
+    </div>
+    <div class="md:hidden">
+      <button @click="open = !open" class="text-white focus:outline-none" x-data="{ open: false }">
+        <svg :class="{'hidden': open, 'block': !open }" class="h-6 w-6" fill="none" stroke="currentColor"
+          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+        <svg :class="{'block': open, 'hidden': !open }" class="h-6 w-6" fill="none" stroke="currentColor"
+          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+  <div class="lg:hidden" x-show="open" @click.away="open = false" x-data="{ open: false }">
+    <a href="#home" class="block text-white hover:text-yellow-500 px-4 py-2">Home</a>
+    <a href="#about" class="block text-white hover:text-yellow-500 px-4 py-2">About</a>
+    <a href="#services" class="block text-white hover:text-yellow-500 px-4 py-2">Services</a>
+    <a href="#contact" class="block text-white hover:text-yellow-500 px-4 py-2">Contact</a>
+  </div>
+
+</nav>
+
+
+<body class="   ">
+  <div style="background-image: url('./img/header_4.jpeg'); "
+    class="md:grid md:px-32 px-5 bg-no-repeat bg-cover grid-cols-2">
+    <div class="col-span-1 py-20">
+      <h1 class="text-5xl text-center text-black font-bold  justify-center mx-auto">
+        WELCOME TO JAI KAILA MAA EVENT AND AMUSEMENT
+      </h1>
+      <p class=" py-10 text-xl text-center">
+        Whether you're looking for family-friendly fun, thrilling rides, live
+        entertainment, or delicious food, Jai Kaila Maa Event and Amusement
+        has something for everyone. Join us for an adventure-packed day filled
+        with laughter, joy, and memories that will last a lifetime
+      </p>
+      <button class="btn " aria-label="TALK TO US">
+        <span>TALK TO US!</span>
+      </button>
+      <!-- <button class="r " aria-label="TALK TO US">
+          <span>TALK TO US!</span>
+        </button> -->
+    </div>
+    <!-- <div class="col-span-1">
+        <img src="./img/hader1.png" />
+      </div> -->
+
+  </div>
+  <div class="py-10 px-5 md:grid grid-cols-5">
+    <div class="col-span-2  rounded-xl">
+      <img class="w-full rounded-xl " src="./img/header_3.jpeg" />
+    </div>
+    <div class="col-span-3 -ml-14  mt-20 px-10 py-5 rounded-xl bg-slate-400">
+      <h1 class="text-4xl uppercase py-4"> asdfadf adfad fds fasdf adfadfaf asdf</h1>
+      <p class="text-xl"> Whether you're looking for family-friendly fun, thrilling rides, live
+        entertainment, or delicious food, Jai Kaila Maa Event and Amusement
+        has something for everyone. Join us for an adventure-packed day filled
+        with laughter, joy, Whether you're looking for family-friendly fun, thrilling rides, live
+        entertainment, or delicious food, Jai Kaila Maa Event and Amusement
+        has something for everyone. Join us for an adventure-packed day filled
+        with laughter, joy, and memories that will last a lifetime </p>
+      <div class=" py-5 content-start">
+        <button class="btn  " aria-label="TALK TO US">
+          <span>TALK TO US!</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="py-10 px-5 md:grid grid-cols-5">
+
+    <div class="col-span-3 -mr-14 contrast-100 mt-20 px-10 py-5 rounded-xl bg-slate-400">
+      <h1 class="text-4xl uppercase py-4"> asdfadf adfad fds fasdf adfadfaf asdf</h1>
+      <p class="text-xl"> Whether you're looking for family-friendly fun, thrilling rides, live
+        entertainment, or delicious food, Jai Kaila Maa Event and Amusement
+        has something for everyone. Join us for an adventure-packed day filled
+        with laughter, joy, Whether you're looking for family-friendly fun, thrilling rides, live
+        entertainment, or delicious food, Jai Kaila Maa Event and Amusement
+        has something for everyone. Join us for an adventure-packed day filled
+        with laughter, joy, and memories that will last a lifetime </p>
+      <div class=" py-5 content-start">
+        <button class="btn  " aria-label="TALK TO US">
+          <span>TALK TO US!</span>
+        </button>
+      </div>
+    </div>
+    <div class="col-span-2  rounded-xl">
+      <img class="w-full rounded-xl " src="./img/header_2.jpeg" />
+    </div>
+  </div>
+
+  <div class="py-10 px-5 ">
+    <div class="rounded-xl bg-slate-400 md:grid grid-cols-3">
+      <div class=" col-span-1 p-5 rounded-xl">
+        <img class="w-full h-full rounded-xl " src="./img/header_4.jpeg" />
+      </div>
+      <div class="col-span-2 px-10 py-5 ">
+        <h1 class="text-4xl uppercase py-4"> asdfadf adfad fds fasdf adfadfaf asdf</h1>
+        <p class="text-xl"> Whether you're looking for family-friendly fun, thrilling rides, live
+          entertainment, or delicious food, Jai Kaila Maa Event and Amusement
+          has something for everyone. Join us for an adventure-packed day filled
+          with laughter, joy, Whether you're looking for family-friendly fun, thrilling rides, live
+          entertainment, or delicious food, Jai Kaila Maa Event and Amusement
+          has something for everyone. Join us for an adventure-packed day filled
+          with laughter, joy, and memories that will last a lifetime </p>
+        <div class=" py-5 content-start">
+          <button class="btn  " aria-label="TALK TO US">
+            <span>TALK TO US!</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <footer class=" bg-slate-700 divide-y-2">
+
+
+    <div class=" md:grid gap-5 py-10 divide-x-2 grid-cols-5 px-20">
+      <div class="col-span-1 ">
+        <img class="w-full rounded-xl " src="./img/header_4.jpeg" />
+      </div>
+      <div class=" px-5  col-span-3">
+
+        <h2 class="text-2xl">
+          Our Mission
+        </h2>
+        <p class="text-xl">
+          Our mission is to engage people with cultural heritage and to improve history education worldwide.
+        </p>
+        <div class="pt-5 flex gap-2">
+          <!-- Facebook -->
+          <button type="button" data-twe-ripple-init data-twe-ripple-color="light"
+            class="mb-2  inline-block rounded bg-[#1877f2] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
+            <span class="[&>svg]:h-4 [&>svg]:w-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 320 512">
+                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+                <path
+                  d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />
+              </svg>
+            </span>
+          </button>
+
+          <!-- Instagram -->
+          <button type="button" data-twe-ripple-init data-twe-ripple-color="light"
+            class="mb-2 inline-block rounded bg-[#c13584] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
+            <span class="[&>svg]:h-4 [&>svg]:w-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
+                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+              </svg>
+            </span>
+          </button>
+
+          <!-- Google -->
+          <button type="button" data-twe-ripple-init data-twe-ripple-color="light"
+            class="mb-2 inline-block rounded bg-[#ea4335] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
+            <span class="[&>svg]:h-4 [&>svg]:w-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 488 512">
+                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+                <path
+                  d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" />
+              </svg>
+            </span>
+          </button>
+
+          <!-- Linkedin -->
+          <button type="button" data-twe-ripple-init data-twe-ripple-color="light"
+            class="mb-2 inline-block rounded bg-[#0077b5] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
+            <span class="[&>svg]:h-4 [&>svg]:w-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
+                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+                <path
+                  d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
+              </svg>
+            </span>
+          </button>
+
+        </div>
+      </div>
+    </div>
+    <div class="flex py-10 text-2xl font-bold uppercase divide-x-2 divide-red-400 gap-2  justify-center">
+      <div class="px-2">
+        <a href="">
+          home
+        </a>
+      </div>
+      <div class="px-2">
+        <a href="">
+          about
+        </a>
+      </div>
+      <div class="px-2">
+        <a href="">
+          contact
+        </a>
+      </div>
+      <div class="px-2">
+        <a href="">
+          see
+        </a>
+      </div>
+      <div class="px-2">
+        <a href="">
+          do
+        </a>
+      </div>
+    </div>
+    <div class="text-xl flex flex-col  gap-2 py-10 text-center">
+      <p> World History Publishing is a non-profit company registered in the United Kingdom.
+      </p>
+      <p>
+        World History Foundation is a non-profit organization registered in Canada.
+      </p>
+      <p>
+        Some Rights Reserved (2009-2024) under Creative Commons Attribution-NonCommercial-ShareAlike license unless
+        otherwise noted.
+      </p>
+      <p>
+        The World History Encyclopedia logo is a registered trademark.
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>
