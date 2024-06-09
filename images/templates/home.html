@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +23,7 @@
 </head>
 <nav class="fixed w-full z-50 divide-y-2 py-2 bg-slate-700">
   <div class="container mx-auto flex justify-between items-center">
-    <div class="text-white text-2xl font-bold">BrandName</div>
+    <div class="text-white text-2xl font-bold">JKMEVENTS</div>
     <div class="hidden md:flex space-x-4">
       <a href="#home" class="text-white hover:text-yellow-500">Home</a>
       <a href="#about" class="text-white hover:text-yellow-500">About</a>
@@ -104,7 +105,7 @@
 
 
 <body class="   ">
-  <div style="background-image: url('./img/header_4.jpeg'); "
+  <div style="background-image: url('{% static "img/header_4.jpeg" %}'); "
     class="md:grid md:px-32 px-5 bg-no-repeat bg-cover grid-cols-2">
     <div class="col-span-1 py-20">
       <h1 class="text-5xl text-center text-black font-bold  justify-center mx-auto">
@@ -130,7 +131,8 @@
   </div>
   <div class="py-10 px-5 md:grid grid-cols-5">
     <div class="col-span-2  rounded-xl">
-      <img class="w-full rounded-xl " src="./img/header_3.jpeg" />
+      
+      <img class="w-full rounded-xl " src="{% static "img/header_3.jpeg" %}" />
     </div>
     <div class="col-span-3 -ml-14  mt-20 px-10 py-5 rounded-xl bg-slate-400">
       <h1 class="text-4xl uppercase py-4"> asdfadf adfad fds fasdf adfadfaf asdf</h1>
@@ -166,14 +168,14 @@
       </div>
     </div>
     <div class="col-span-2  rounded-xl">
-      <img class="w-full rounded-xl " src="./img/header_2.jpeg" />
+      <img class="w-full rounded-xl " src="{% static "img/header_2.jpeg" %}" />
     </div>
   </div>
 
   <div class="py-10 px-5 ">
     <div class="rounded-xl bg-slate-400 md:grid grid-cols-3">
       <div class=" col-span-1 p-5 rounded-xl">
-        <img class="w-full h-full rounded-xl " src="./img/header_4.jpeg" />
+        <img class="w-full h-full rounded-xl " src="{% static "img/header_4.jpeg" %}" />
       </div>
       <div class="col-span-2 px-10 py-5 ">
         <h1 class="text-4xl uppercase py-4"> asdfadf adfad fds fasdf adfadfaf asdf</h1>
@@ -198,7 +200,7 @@
 
     <div class=" md:grid gap-5 py-10 divide-x-2 grid-cols-5 px-20">
       <div class="col-span-1 ">
-        <img class="w-full rounded-xl " src="./img/header_4.jpeg" />
+        <img class="w-full rounded-xl " src="{% static "img/header_3.jpeg" %}" />
       </div>
       <div class=" px-5  col-span-3">
 
