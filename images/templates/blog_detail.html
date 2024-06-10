@@ -3,33 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ blog.title }}</title>
+    <title>{{ blog_details.title }}</title>
 </head>
 <body>
-    <h1>{{ blog.title }}</h1>
-    <p>Category: {{ blog.category }}</p>
-    <p>Published on: {{ blog.date }}</p>
-    <p>Priority: {{ blog.priority }}</p>
-    <p>Keywords: {{ blog.keywords }}</p>
+    <h1>{{ blog_details.title }}</h1>
+    <p>Category: {{ blog_details.category }}</p>
+    <p>Published on: {{ blog_details.date }}</p>
+    <p>Priority: {{ blog_details.priority }}</p>
+    <p>Keywords: {{ blog_details.keywords }}</p>
 
-    {% if blog.heading %}
-        <h2>{{ blog.heading }}</h2>
+    {% if blog_details.heading %}
+        <h2>{{ blog_details.heading }}</h2>
     {% endif %}
 
-    {% if blog.sub_heading %}
-        <h3>{{ blog.sub_heading }}</h3>
+    {% if blog_details.sub_heading %}
+        <h3>{{ blog_details.sub_heading }}</h3>
     {% endif %}
 
-    {% if blog.sub_heading_2 %}
-        <h4>{{ blog.sub_heading_2 }}</h4>
+    {% if blog_details.sub_heading_2 %}
+        <h4>{{ blog_details.sub_heading_2 }}</h4>
     {% endif %}
 
-    {% for i in "12345"|make_list %}
-        {% if blog|getattr:"context_"|add:i %}
-            <p>{{ blog|getattr:"context_"|add:i }}</p>
+    {% for context in blog_details.contexts %}
+        {% if context %}
+            <p>{{ context }}</p>
         {% endif %}
-        {% if blog|getattr:"image_"|add:i %}
-            <img src="{{ blog|getattr:"image_"|add:i.url }}" alt="Image {{ i }}">
+    {% endfor %}
+
+    {% for image in blog_details.images %}
+        {% if image %}
+            <img src="{{ image.url }}" alt="Blog Image">
         {% endif %}
     {% endfor %}
 </body>

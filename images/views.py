@@ -51,6 +51,22 @@ def blog_list(request):
     blogs = Blog.objects.all()
     return render(request, 'blog_list.html', {'blogs': blogs})
 
-def blog_detail(request, slug):
+
+def blog_detail_view(request, slug):
     blog = get_object_or_404(Blog, slug=slug)
-    return render(request, 'blog_detail.html', {'blog': blog})
+
+    # Prepare the dictionary with all the fields
+    blog_details = {
+        'title': blog.title,
+        'category': blog.category,
+        'priority': blog.priority,
+        'date': blog.date,
+        'keywords': blog.keywords,
+        'heading': blog.heading,
+        'sub_heading': blog.sub_heading,
+        'sub_heading_2': blog.sub_heading_2,
+        'contexts': [getattr(blog, f'context_{i}') for i in range(1, 6)],
+        'images': [getattr(blog, f'image_{i}') for i in range(1, 6)]
+    }
+
+    return render(request, 'blog_detail.html', {'blog_details': blog_details})
