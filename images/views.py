@@ -23,6 +23,7 @@ def index_view(request):
     })
 
 
+
 @require_http_methods(["POST"])
 def upload_view(request):
     upload_form = UploadForm(data=request.POST, files=request.FILES)
