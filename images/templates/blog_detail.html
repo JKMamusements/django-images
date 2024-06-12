@@ -1,190 +1,39 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ blog.title }}</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="bg-gray-300 text-gray-900">
-    <header class="py-6 px-5 md:px-24">
-      <div class="container">
-        <div class="flex gap-2 mx-auto">
-          <div class="w-36">
-            {% if blog.image_1 %}
-            <img
-              id="image1"
-              class="w-full md:w-96 mb-6 rounded-lg"
-              src="{{ blog.image_1.url }}"
-              alt="Image 1"
-            />
-            {% endif %}
-            </div>
-          <div class="flex justify-center">
-            <h1 id="blog-title" class="text-3xl font-bold uppercase font-serif">Blog Title</h1>
-          </div>
-        </div>
-        <div>
-          <p id="date" class="text-gray-600 uppercase font-serif mb-2"></p>
-          <div class="flex uppercase font-serif">
-            <p class="font-bold">other : &nbsp;</p>
-            <p id="other_name" class="text-gray-600 italic mb-2"></p>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div class="container px-5 md:px-24">
-      <div class="content md:flex flex-grow bg-white p-6 rounded-lg shadow-lg">
-        <img
-          id="image2"
-          class="w-full md:w-96 mb-6 rounded-lg"
-          src="{{ blog.image_1.url }}"
-          alt="Image 1"
-        />
-        <div class="md:px-5 flex flex-col justify-center" id="blog-content1"></div>
-      </div>
-    </div>
-    <div class="container px-5 md:px-24 py-5">
-      <div class="content bg-white p-6 rounded-lg shadow-lg" id="blog-content2">
-        <h1 id="blog-title1" class="text-2xl py-5 font-bold uppercase font-serif">Blog Title 1</h1>
-      </div>
-      <img
-        id="image3"
-        class="w-full my-6 rounded-lg"
-        src="https://via.placeholder.com/800x400"
-        alt="Image 2"
-      />
-      <div class="content bg-white p-6 rounded-lg shadow-lg" id="blog-content"></div>
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ blog_details.title }}</title>
+</head>
+<body>
+    <h1>{{ blog_details.title }}</h1>
+    <p>Category: {{ blog_details.category }}</p>
+    <p>Published on: {{ blog_details.date }}</p>
+    <p>Priority: {{ blog_details.priority }}</p>
+    <p>Keywords: {{ blog_details.keywords }}</p>
 
-    <script>
-      const blogTitle = "Dynamic Blog Title with Tailwind CSS";
-      const blogTitle1 = "Dynamic Blog Title with Tailwind CSS";
-      const blogOther = "  Dynamic Blog Title with Tailwind CSS";
-      const image1Src =
-        "https://img.freepik.com/free-photo/tropical-beach_1203-6634.jpg?t=st=1718186288~exp=1718189888~hmac=040e2cbc4d675c9a7abe04791fec84c9f567eeaa565f9fc34ea59fd656a31317&w=1380";
-      const image2Src =
-        "https://img.freepik.com/free-photo/coast-beautiful-nature-white-vacation_1203-5222.jpg?w=1380&t=st=1718186260~exp=1718186860~hmac=26981097a10a05d5d59a9f9dcf35642c545dd29a0ca00fa66234f8d05b1fc1dc";
-      const image3Src =
-        "https://img.freepik.com/free-photo/coast-beautiful-nature-white-vacation_1203-5222.jpg?w=1380&t=st=1718186260~exp=1718186860~hmac=26981097a10a05d5d59a9f9dcf35642c545dd29a0ca00fa66234f8d05b1fc1dc";
-      const paragraph1 = [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      ];
-      const paragraph2 = [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.",
-        "Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.",
-        "Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula.",
-        "Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam.",
-        "Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi.",
-        "Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat.",
-        "Cras mollis scelerisque nunc. Nullam arcu. Aliquam erat volutpat.",
-        "Duis ac turpis. Integer rutrum ante eu lacus. Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque.",
-        "Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi.",
-        "Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue.",
-      ];
-      const paragraphs = [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.",
-        "Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.",
-        "Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula.",
-        "Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam.",
-        "Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi.",
-        "Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat.",
-        "Cras mollis scelerisque nunc. Nullam arcu. Aliquam erat volutpat.",
-        "Duis ac turpis. Integer rutrum ante eu lacus. Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque.",
-        "Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi.",
-        "Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue.",
-      ];
+    {% if blog_details.heading %}
+        <h2>{{ blog_details.heading }}</h2>
+    {% endif %}
 
-      document.getElementById("blog-title").innerText = blogTitle;
-      document.getElementById("blog-title1").innerText = blogTitle1;
-      document.getElementById("image1").src = image1Src;
-      document.getElementById("image2").src = image2Src;
-      document.getElementById("image3").src = image3Src;
-      document.getElementById("other_name").innerText = blogOther;
+    {% if blog_details.sub_heading %}
+        <h3>{{ blog_details.sub_heading }}</h3>
+    {% endif %}
 
-      const content1 = document.getElementById("blog-content1");
-      const content2 = document.getElementById("blog-content2");
-      const content = document.getElementById("blog-content");
+    {% if blog_details.sub_heading_2 %}
+        <h4>{{ blog_details.sub_heading_2 }}</h4>
+    {% endif %}
 
-      const date = new Date();
-      document.getElementById("date").innerText = date.toDateString();
+    {% for context in blog_details.contexts %}
+        {% if context %}
+            <p>{{ context }}</p>
+        {% endif %}
+    {% endfor %}
 
-      paragraphs.forEach((text) => {
-        const p = document.createElement("p");
-        p.className = "mb-4";
-        p.innerText = text;
-        content.appendChild(p);
-      });
-      paragraph1.forEach((text) => {
-        const p = document.createElement("p");
-        p.className = "mb-4";
-        p.innerText = text;
-        content1.appendChild(p);
-      });
-      paragraph2.forEach((text) => {
-        const p = document.createElement("p");
-        p.className = "mb-4";
-        p.innerText = text;
-        content2.appendChild(p);
-      });
-    </script>
-
-
-    
-    <div class="container">
-        <h1>{{ blog.title }}</h1>
-        <p>Category: {{ blog.category }}</p>
-        <p>Priority: {{ blog.priority }}</p>
-        <p>Date Added: {{ blog.date_added }}</p>
-        <p>Keywords: {{ blog.keywords }}</p>
-
-        <h2>{{ blog.heading }}</h2>
-        <h3>{{ blog.sub_heading }}</h3>
-        <h4>{{ blog.sub_heading_2 }}</h4>
-
-        <div class="content">
-            <p>{{ blog.context_1 }}</p>
-            <p>{{ blog.context_2 }}</p>
-            <p>{{ blog.context_3 }}</p>
-            <p>{{ blog.context_4 }}</p>
-            <p>{{ blog.context_5 }}</p>
-        </div>
-
-        <div class="images">
-            {% if blog.image_1 %}
-                <img src="{{ blog.image_1.url }}" alt="Image 1">
-            {% endif %}
-            {% if blog.image_2 %}
-                <img src="{{ blog.image_2.url }}" alt="Image 2">
-            {% endif %}
-            {% if blog.image_3 %}
-                <img src="{{ blog.image_3.url }}" alt="Image 3">
-            {% endif %}
-            {% if blog.image_4 %}
-                <img src="{{ blog.image_4.url }}" alt="Image 4">
-            {% endif %}
-            {% if blog.image_5 %}
-                <img src="{{ blog.image_5.url }}" alt="Image 5">
-            {% endif %}
-        </div>
-    </div>
-
-  </body>
+    {% for image in blog_details.images %}
+        {% if image %}
+            <img src="{{ image.url }}" alt="Blog Image">
+        {% endif %}
+    {% endfor %}
+</body>
 </html>

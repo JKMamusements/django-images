@@ -43,15 +43,30 @@ def testing(request):
 def home(request):
     return render(request, "home.html", {})
 
+
 from django.shortcuts import render, get_object_or_404
 from .models import Blog
-from django.forms.models import model_to_dict
 
 def blog_list(request):
-    blogs = Blog.objects.order_by('priority', '-date_added')
+    blogs = Blog.objects.all()
     return render(request, 'blog_list.html', {'blogs': blogs})
 
+
 def blog_detail_view(request, slug):
-    blog = get_object_or_404(Blog.objects.select_related(), slug=slug)
-    blog_dict = model_to_dict(blog)
-    return render(request, 'blog_detail.html', {'blog': blog_dict})
+    blog = get_object_or_404(Blog, slug=slug)
+
+    # Prepare the dictionary with all the fields
+    blog_details = {
+        'title': blog.title,
+        'category': blog.category,
+        'priority': blog.priority,
+        'date': blog.date,
+        'keywords': blog.keywords,
+        'heading': blog.heading,
+        'sub_heading': blog.sub_heading,
+        'sub_heading_2': blog.sub_heading_2,
+        'contexts': [getattr(blog, f'context_{i}') for i in range(1, 6)],
+        'images': [getattr(blog, f'image_{i}') for i in range(1, 6)]
+    }
+
+    return render(request, 'blog_detail.html', {'blog_details': blog_details})
