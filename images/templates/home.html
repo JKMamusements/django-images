@@ -1,206 +1,295 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="{% static "img/home.css" %}">
-  <title>Jkm Amusements</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            clifford: "#da373d",
-          },
-        },
-      },
-    };
-  </script>
+  <title>Basic HTML and Tailwind CSS</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet" />
+  <link href="{% static "home.css" %}" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<nav class="fixed w-full z-50 divide-y-2 py-2 bg-slate-700">
-  <div class="container mx-auto flex justify-between items-center">
-    <div class="text-white text-2xl font-bold">JKMEVENTS</div>
-    <div class="hidden md:flex space-x-4">
-      <a href="#home" class="text-white hover:text-yellow-500">Home</a>
-      <a href="#about" class="text-white hover:text-yellow-500">About</a>
-      <a href="#services" class="text-white hover:text-yellow-500">Services</a>
-      <a href="#contact" class="text-white hover:text-yellow-500">Contact</a>
-    </div>
-    <div>
-      <!-- Facebook -->
-      <button type="button" data-twe-ripple-init data-twe-ripple-color="light"
-        class="mb-2 inline-block rounded bg-[#1877f2] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
-        <span class="[&>svg]:h-4 [&>svg]:w-4">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 320 512">
-            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
-            <path
-              d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />
-          </svg>
-        </span>
-      </button>
-
-      <!-- Instagram -->
-      <button type="button" data-twe-ripple-init data-twe-ripple-color="light"
-        class="mb-2 inline-block rounded bg-[#c13584] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
-        <span class="[&>svg]:h-4 [&>svg]:w-4">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
-            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
-            <path
-              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
-          </svg>
-        </span>
-      </button>
-
-      <!-- Google -->
-      <button type="button" data-twe-ripple-init data-twe-ripple-color="light"
-        class="mb-2 inline-block rounded bg-[#ea4335] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
-        <span class="[&>svg]:h-4 [&>svg]:w-4">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 488 512">
-            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
-            <path
-              d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" />
-          </svg>
-        </span>
-      </button>
-
-      <!-- Linkedin -->
-      <button type="button" data-twe-ripple-init data-twe-ripple-color="light"
-        class="mb-2 inline-block rounded bg-[#0077b5] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
-        <span class="[&>svg]:h-4 [&>svg]:w-4">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
-            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
-            <path
-              d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
-          </svg>
-        </span>
-      </button>
-
-    </div>
-    <div class="md:hidden">
-      <button @click="open = !open" class="text-white focus:outline-none" x-data="{ open: false }">
-        <svg :class="{'hidden': open, 'block': !open }" class="h-6 w-6" fill="none" stroke="currentColor"
-          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-        <svg :class="{'block': open, 'hidden': !open }" class="h-6 w-6" fill="none" stroke="currentColor"
-          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-    </div>
-
-  </div>
-  <div class="lg:hidden" x-show="open" @click.away="open = false" x-data="{ open: false }">
-    <a href="#home" class="block text-white hover:text-yellow-500 px-4 py-2">Home</a>
-    <a href="#about" class="block text-white hover:text-yellow-500 px-4 py-2">About</a>
-    <a href="#services" class="block text-white hover:text-yellow-500 px-4 py-2">Services</a>
-    <a href="#contact" class="block text-white hover:text-yellow-500 px-4 py-2">Contact</a>
-  </div>
-
-</nav>
 
 
-<body class="   ">
-  <div style="background-image: url('{% static "img/header_4.jpeg" %}'); "
-    class="md:grid md:px-32 px-5 bg-no-repeat bg-cover grid-cols-2">
-    <div class="col-span-1 py-20">
-      <h1 class="text-5xl text-center text-black font-bold  justify-center mx-auto">
-        WELCOME TO JAI KAILA MAA EVENT AND AMUSEMENT
-      </h1>
-      <p class=" py-10 text-xl text-center">
-        Whether you're looking for family-friendly fun, thrilling rides, live
-        entertainment, or delicious food, Jai Kaila Maa Event and Amusement
-        has something for everyone. Join us for an adventure-packed day filled
-        with laughter, joy, and memories that will last a lifetime
-      </p>
-      <button class="btn " aria-label="TALK TO US">
-        <span>TALK TO US!</span>
-      </button>
-      <!-- <button class="r " aria-label="TALK TO US">
-          <span>TALK TO US!</span>
-        </button> -->
-    </div>
-    <!-- <div class="col-span-1">
-        <img src="./img/hader1.png" />
-      </div> -->
+<body class="  cinzel text-xl   text-gray-800">
 
-  </div>
-  <div class="py-10 px-5 md:grid grid-cols-5">
-    <div class="col-span-2  rounded-xl">
-      
-      <img class="w-full rounded-xl " src="{% static "img/header_3.jpeg" %}" />
-    </div>
-    <div class="col-span-3 -ml-14  mt-20 px-10 py-5 rounded-xl bg-slate-400">
-      <h1 class="text-4xl uppercase py-4"> EXPLORE THE WORLD OF MELA AND EXPERIENCE OUR DELIGHTFUL CARNIVAL. !</h1>
-      <p class="text-xl"> Whether you're looking for family-friendly fun, thrilling rides, live
-        entertainment, or delicious food, Jai Kaila Maa Event and Amusement
-        has something for everyone. Join us for an adventure-packed day filled
-        with laughter, joy, Whether you're looking for family-friendly fun, thrilling rides, live
-        entertainment, or delicious food, Jai Kaila Maa Event and Amusement
-        has something for everyone. Join us for an adventure-packed day filled
-        with laughter, joy, and memories that will last a lifetime </p>
-      <div class=" py-5 content-start">
-        <button class="btn  " aria-label="TALK TO US">
-          <span>TALK TO US!</span>
-        </button>
-      </div>
-    </div>
-  </div>
-  <div class="py-10 px-5 md:grid grid-cols-5">
 
-    <div class="col-span-3 -mr-14 contrast-100 mt-20 px-10 py-5 rounded-xl bg-slate-400">
-      <h1 class="text-4xl uppercase py-4"> EXPLORE THE WORLD OF MELA AND EXPERIENCE OUR DELIGHTFUL CARNIVAL. !</h1>
-      <p class="text-xl"> Whether you're looking for family-friendly fun, thrilling rides, live
-        entertainment, or delicious food, Jai Kaila Maa Event and Amusement
-        has something for everyone. Join us for an adventure-packed day filled
-        with laughter, joy, Whether you're looking for family-friendly fun, thrilling rides, live
-        entertainment, or delicious food, Jai Kaila Maa Event and Amusement
-        has something for everyone. Join us for an adventure-packed day filled
-        with laughter, joy, and memories that will last a lifetime </p>
-      <div class=" py-5 content-start">
-        <button class="btn  " aria-label="TALK TO US">
-          <span>TALK TO US!</span>
-        </button>
-      </div>
-    </div>
-    <div class="col-span-2  rounded-xl">
-      <img class="w-full rounded-xl " src="{% static "img/header_2.jpeg" %}" />
-    </div>
-  </div>
 
-  <div class="py-10 px-5 ">
-    <div class="rounded-xl bg-slate-400 md:grid grid-cols-3">
-      <div class=" col-span-1 p-5 rounded-xl">
-        <img class="w-full h-full rounded-xl " src="{% static "img/header_4.jpeg" %}" />
-      </div>
-      <div class="col-span-2 px-10 py-5 ">
-        <h1 class="text-4xl uppercase py-4"> EXPLORE THE WORLD OF MELA AND EXPERIENCE OUR DELIGHTFUL CARNIVAL. !</h1>
-        <p class="text-xl"> Whether you're looking for family-friendly fun, thrilling rides, live
-          entertainment, or delicious food, Jai Kaila Maa Event and Amusement
-          has something for everyone. Join us for an adventure-packed day filled
-          with laughter, joy, Whether you're looking for family-friendly fun, thrilling rides, live
-          entertainment, or delicious food, Jai Kaila Maa Event and Amusement
-          has something for everyone. Join us for an adventure-packed day filled
-          with laughter, joy, and memories that will last a lifetime </p>
-        <div class=" py-5 content-start">
-          <button class="btn  " aria-label="TALK TO US">
-            <span>TALK TO US!</span>
-          </button>
+  <nav class="shadow-lg">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between">
+        <div class="flex space-x-7">
+          <div>
+            <!-- Website Logo -->
+            <a href="#" class="flex items-center py-4 px-2">
+              <span class="font-semibold text-gray-500 text-lg">LOGO</span>
+            </a>
+          </div>
+          <!-- Primary Navbar items -->
+          <div class="hidden md:flex items-center space-x-1">
+            <a href="#" class="py-4 px-2  font-semibold nav_btn_lg transition duration-300">Home</a>
+            <a href="#" class="py-4 px-2  font-semibold nav_btn_lg transition duration-300">Services</a>
+            <a href="#" class="py-4 px-2  font-semibold nav_btn_lg transition duration-300">About</a>
+            <a href="#" class="py-4 px-2  font-semibold nav_btn_lg transition duration-300">Contact Us</a>
+          </div>
+          <div id="boll" ></div>
+        </div>
+        <!-- Secondary Navbar items -->
+        <div class="hidden md:flex items-center space-x-3 ">
+          <a href="" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-gray-200 transition duration-300">Log In</a>
+          <a href="" class="py-2 px-2 font-medium text-white bg-blue-500 rounded hover:bg-blue-400 transition duration-300">Sign Up</a>
+        </div>
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center">
+          <div class="outline-none mobile-menu-button   p-2   rounded  hover:bg-red-400">
+            
+            <i class="fa fa-bars"></i>
+          </div>
         </div>
       </div>
     </div>
+    <!-- mobile menu -->
+    <div class="hidden mobile-menu">
+      <ul class="">
+        <li><a href="index.html" class="block text-xl px-2 py-4  nav_btn font-semibold">Home</a></li>
+        <li><a href="#services" class="block text-xl px-2 py-4  nav_btn transition duration-300">Services</a></li>
+        <li><a href="#about" class="block text-xl px-2 py-4 nav_btn transition duration-300">About</a></li>
+        <li><a href="#contact" class="block text-xl px-2 py-4 nav_btn transition duration-300">Contact Us</a></li>
+      </ul>
+    </div>
+    <script>
+      const btn = document.querySelector("div.mobile-menu-button");
+      const menu = document.querySelector(".mobile-menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
+  </nav>
+  <svg width="1116" height="2086" viewBox="0 0 1116 2086" fill="none" xmlns="http://www.w3.org/2000/svg"
+    class=" squiggle">
+    <path
+      d="M0 1C0 1 487 1.00003 575 48C663 94.9999 575 197 575 197V447C575 447 486.636 445.017 487 482C487.363 518.84 678 641 575 516C472 391 656.278 508.556 643 482C631.124 458.248 575 482 575 482V927C575 927 552.171 882.991 526 881C501.152 879.11 487.678 895.629 472 915C444.168 949.388 432.95 996.487 464 1028C496.875 1061.37 540.767 1033.26 583 1013C630.572 990.182 623.47 910.062 676 915C742.487 921.25 741.38 1072.4 676 1086C618.338 1098 575 974 575 974V1191V1540L464 1558C464 1558 687 1764 676 1558C665 1352 575 1585 575 1585V2015C575 2015 499 2104 464 2081C429 2058 634 2015 634 2015L575 2138C575 2138 518 1993 493 2090C468 2187 658.398 2013 669 2081C677.344 2134.52 575 2183 575 2183V2596V2798C575 2798 414 2791 429 2719C444 2647 746 2833 695 2719C644 2605 575 2898 575 2898V3196C575 3196 727.692 3292.63 836 3330C940.979 3366.23 1115 3385 1115 3385"
+      stroke="black" />
+  </svg>
+
+  <div class= " ">
+    
+    <img src=" {% static "img/welcome2.jpg" %} " alt="Wheel" class=" w-full " />
+    <div class="flex text-2xl   flex-col justify-center items-center xl:px-20 2xl:px-40 lg:px-10 px-5 md:px-10 my-auto">
+      <h2 class="spicy-rice-regular  lg:text-7xl text-5xl tex py-10">
+        Leading the way in our field since 1993
+      </h2>
+      <p class="">
+        <span class="text-3xl spicy-rice-regular "> Highlight Top Recipes : </span> Display a selection of
+        your best or most popular recipes with attractive images. Include a short description and
+        a link to the full recipe page.
+      </p>
+      <p class="">
+        <span class="text-3xl spicy-rice-regular"> Example : </span>Try our top-rated recipes: [Recipe Name
+        1], [Recipe Name 2], [Recipe Name 3]. Each one is crafted to perfection with step-by-step
+        instructions and tips.
+      </p>
+      <button class=" text-white md:px-5 p-3 md:py-8 md:my-10 my-4 rounded ">
+        Get Ticket
+      </button>
+    </div>
+  </div>
+  <div class="py-5 xl:px-20 2xl:px-40 lg:px-10 px-5 flex flex-col justify-center">
+    <div class="wheel-container flex justify-center items-center">
+      <img src=" {% static "img/wheel1.png" %} " alt="Wheel" class="md:w-96 md:h-96 w-40 h-40 wheel" />
+    </div>
+    <script src=" {% static "script.js" %} "></script>
+    <div class="md:grid grid-cols-6">
+      <div class="items-end flex justify-center col-span-2">
+        <img src=" {% static "img/welcomebg.png" %} " alt="" class="" />
+      </div>
+      <div id="box" class="col-span-2"></div>
+      <div class="hidden md:block col-span-2"><img src=" {% static "img/welcome1.png" %} " alt="" class="w-full h-full" /></div>
+    </div>
+  </div>
+  </div>
+  <div class="md:grid flex xl:px-20 2xl:px-40 lg:px-10 px-5  ooverflow-hidden flex-col-reverse grid-cols-2 py-5">
+    <div class="py-10  overflow-hidden  md:my-auto">
+      <div class="pop-outin   items-center justify-center flex">
+        <img src=" {% static "img/welcome1.png" %} " alt="" class="w-36 p-4 overflow-hidden bg-white rounded-full h-36" />
+      </div>
+    </div>
+    <!-- <div class="py-10 overflow-hidden md:my-auto bg-red-200 h-48 w-48">
+      <div class="pop-outin items-center justify-center flex">
+        <img src="img/welcome1.png" alt="" class="w-36 p-4 bg-white rounded-full h-36" />
+      </div>
+    </div> -->
+    <div class="px-5 md:px-10 my-auto">
+      <h2 class=" spicy-rice-regular   text-5xl tex py-10">
+        Leading the way in our field since 1993
+      </h2>
+      
+      <p class="">
+        <span class="text-2xl spicy-rice-regular"> Highlight Top Recipes : </span> Display a selection of
+        your best or most popular recipes with attractive images. Include a short description and
+        a link to the full recipe page.
+      </p>
+      <p class="">
+        <span class="text-xl spicy-rice-regular"> Example : </span>Try our top-rated recipes: [Recipe Name
+        1], [Recipe Name 2], [Recipe Name 3]. Each one is crafted to perfection with step-by-step
+        instructions and tips.
+      </p>
+      <button class=" text-white md:px-5 p-3 md:py-8 md:my-10 my-4 rounded ">
+        Get Ticket
+      </button>
+    </div>
+  </div>
+  <div class="md:grid xl:px-20 2xl:px-40 lg:px-10 px-5 flex flex-col md:grid-cols-2 py-5">
+    <div class="px-5 md:px-10 my-auto">
+      <h2 class=" spicy-rice-regular text-gray-700 text-5xl tex py-10">
+        Leading the way in our field since 1993
+      </h2>
+
+      
+      <p class="">
+        <span class="text-2xl spicy-rice-regular"> Highlight Top Recipes : </span> Display a selection of
+        your best or most popular recipes with attractive images. Include a short description and
+        a link to the full recipe page.
+      </p>
+      <p class="">
+        <span class="text-xl spicy-rice-regular"> Example : </span>Try our top-rated recipes: [Recipe Name
+        1], [Recipe Name 2], [Recipe Name 3]. Each one is crafted to perfection with step-by-step
+        instructions and tips.
+      </p>
+      <button class=" text-white md:px-5 p-3 md:py-8 md:my-10 my-4 rounded ">
+        Get Ticket
+      </button>
+    </div>
+    <div class="md:my-auto overflow-hidden py-10">
+      <div class=" items-center justify-center flex">
+        <img src=" {% static "img/welcome3bg.png" %} " alt="" class="w-full h-full p-4  rounded-full " />
+      </div>
+    </div>
+  </div>
+  <div class="md:grid xl:px-20 2xl:px-40 lg:px-10 px-5 flex flex-col-reverse md:grid-cols-2 py-5">
+    <div class="md:my-auto overflow-hidden py-10">
+      <div class=" items-center justify-center flex">
+        <img src=" {% static "img/welcome7bg.png" %} " alt="" class="w-full h-full p-4   " />
+      </div>
+    </div>
+    <div class="px-5 md:px-10 my-auto">
+      <h2 class=" spicy-rice-regular text-gray-700 text-5xl tex py-10">
+        Leading the way in our field since 1993
+      </h2>
+
+      
+      <p class="">
+        <span class="text-2xl spicy-rice-regular"> Highlight Top Recipes : </span> Display a selection of
+        your best or most popular recipes with attractive images. Include a short description and
+        a link to the full recipe page.
+      </p>
+      <p class="">
+        <span class="text-xl spicy-rice-regular"> Example : </span>Try our top-rated recipes: [Recipe Name
+        1], [Recipe Name 2], [Recipe Name 3]. Each one is crafted to perfection with step-by-step
+        instructions and tips.
+      </p>
+      <button class=" text-white md:px-5 p-3 md:py-8 md:my-10 my-4 rounded ">
+        Get Ticket
+      </button>
+    </div>
 
   </div>
-  <footer class=" bg-slate-700 divide-y-2">
+  <div class="md:grid xl:px-20 2xl:px-40 lg:px-10 px-5 flex flex-col md:grid-cols-2 py-5">
+    <div class="px-5 md:px-10 my-auto">
+      <h2 class=" spicy-rice-regular text-gray-700 text-5xl tex py-10">
+        Leading the way in our field since 1993
+      </h2>
+
+      
+      <p class="">
+        <span class="text-2xl spicy-rice-regular"> Highlight Top Recipes : </span> Display a selection of
+        your best or most popular recipes with attractive images. Include a short description and
+        a link to the full recipe page.
+      </p>
+      <p class="">
+        <span class="text-xl spicy-rice-regular"> Example : </span>Try our top-rated recipes: [Recipe Name
+        1], [Recipe Name 2], [Recipe Name 3]. Each one is crafted to perfection with step-by-step
+        instructions and tips.
+      </p>
+      <button class=" text-white md:px-5 p-3 md:py-8 md:my-10 my-4 rounded ">
+        Get Ticket
+      </button>
+    </div>
+    <div class="md:my-auto overflow-hidden py-10">
+      <div class=" items-center justify-center flex">
+        <img src="{% static "img/welcome4bg.png" %}" alt="" class="w-full h-full p-4  " />
+      </div>
+    </div>
+  </div>
+  <div class="md:grid xl:px-20 2xl:px-40 lg:px-10 px-5 flex flex-col-reverse md:grid-cols-2 py-5">
+    <div class="md:my-auto overflow-hidden py-10">
+      <div class=" items-center justify-center flex">
+        <img src="{% static "img/welcome5bg.png" %}" alt="" class="w-full h-full p-4   " />
+      </div>
+    </div>
+    <div class="px-5 md:px-10 my-auto">
+      <h2 class=" spicy-rice-regular text-gray-700 text-5xl tex py-10">
+        Leading the way in our field since 1993
+      </h2>
+
+      
+      <p class="">
+        <span class="text-2xl spicy-rice-regular"> Highlight Top Recipes : </span> Display a selection of
+        your best or most popular recipes with attractive images. Include a short description and
+        a link to the full recipe page.
+      </p>
+      <p class="">
+        <span class="text-xl spicy-rice-regular"> Example : </span>Try our top-rated recipes: [Recipe Name
+        1], [Recipe Name 2], [Recipe Name 3]. Each one is crafted to perfection with step-by-step
+        instructions and tips.
+      </p>
+      <button class=" text-white md:px-5 p-3 md:py-8 md:my-10 my-4 rounded ">
+        Get Ticket
+      </button>
+    </div>
+
+  </div>
+  <div class="md:grid xl:px-20 2xl:px-40 lg:px-10 px-5 flex flex-col md:grid-cols-2 py-5">
+    <div class="px-5 md:px-10 my-auto">
+      <h2 class=" spicy-rice-regular text-gray-700 text-5xl tex py-10">
+        Leading the way in our  field since 1993
+      </h2>
+
+     
+      <p class="">
+        <span class="text-2xl spicy-rice-regular"> Highlight Top Recipes : </span> Display a selection of
+        your best or most popular recipes with attractive images. Include a short description and
+        a link to the full recipe page.
+      </p>
+      <p class="">
+        <span class="text-xl spicy-rice-regular"> Example : </span>Try our top-rated recipes: [Recipe Name
+        1], [Recipe Name 2], [Recipe Name 3]. Each one is crafted to perfection with step-by-step
+        instructions and tips.
+      </p>
+      <button class=" text-white md:px-5 p-3 md:py-8 md:my-10 my-4 rounded ">
+        Get Ticket
+      </button>
+    </div>
+    <div class="md:my-auto overflow-hidden py-10">
+      <div class=" items-center justify-center flex">
+        <img src=" {% static "img/welcome6bg.png" %} " alt="" class="w-full h-full p-4  " />
+      </div>
+    </div>
+  </div>
+
+  <footer class=" bg-slate-700  ">
 
 
     <div class=" md:grid gap-5 py-10 divide-x-2 grid-cols-5 px-20">
       <div class="col-span-1 ">
-        <img class="w-full rounded-xl " src="{% static "img/header_3.jpeg" %}" />
+        <!-- <img class="w-full rounded-xl " src="./img/header_4.jpeg" /> -->
+         Logo
       </div>
       <div class=" px-5  col-span-3">
 
@@ -211,99 +300,81 @@
           Our mission is to engage people with cultural heritage and to improve history education worldwide.
         </p>
         <div class="pt-5 flex gap-2">
-          <!-- Facebook -->
-          <button type="button" data-twe-ripple-init data-twe-ripple-color="light"
-            class="mb-2  inline-block rounded bg-[#1877f2] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
-            <span class="[&>svg]:h-4 [&>svg]:w-4">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 320 512">
-                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
-                <path
-                  d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />
-              </svg>
-            </span>
-          </button>
-
-          <!-- Instagram -->
-          <button type="button" data-twe-ripple-init data-twe-ripple-color="light"
-            class="mb-2 inline-block rounded bg-[#c13584] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
-            <span class="[&>svg]:h-4 [&>svg]:w-4">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
-                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
-                <path
-                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
-              </svg>
-            </span>
-          </button>
-
-          <!-- Google -->
-          <button type="button" data-twe-ripple-init data-twe-ripple-color="light"
-            class="mb-2 inline-block rounded bg-[#ea4335] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
-            <span class="[&>svg]:h-4 [&>svg]:w-4">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 488 512">
-                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
-                <path
-                  d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" />
-              </svg>
-            </span>
-          </button>
-
-          <!-- Linkedin -->
-          <button type="button" data-twe-ripple-init data-twe-ripple-color="light"
-            class="mb-2 inline-block rounded bg-[#0077b5] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
-            <span class="[&>svg]:h-4 [&>svg]:w-4">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
-                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
-                <path
-                  d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
-              </svg>
-            </span>
-          </button>
-
+        
         </div>
       </div>
     </div>
-    <div class="flex py-10 text-2xl font-bold uppercase divide-x-2 divide-red-400 gap-2  justify-center">
-      <div class="px-2">
-        <a href="">
-          home
-        </a>
-      </div>
-      <div class="px-2">
-        <a href="">
-          about
-        </a>
-      </div>
-      <div class="px-2">
-        <a href="">
-          contact
-        </a>
-      </div>
-      <div class="px-2">
-        <a href="">
-          see
-        </a>
-      </div>
-      <div class="px-2">
-        <a href="">
-          do
-        </a>
-      </div>
-    </div>
+   
     <div class="text-xl flex flex-col  gap-2 py-10 text-center">
-      <p> World History Publishing is a non-profit company registered in the United Kingdom.
-      </p>
-      <p>
-        World History Foundation is a non-profit organization registered in Canada.
-      </p>
-      <p>
-        Some Rights Reserved (2009-2024) under Creative Commons Attribution-NonCommercial-ShareAlike license unless
-        otherwise noted.
-      </p>
-      <p>
-        The World History Encyclopedia logo is a registered trademark.
-      </p>
+     
+    </div>
+    <div id="box2" ></div>
+    <div id="fotter_2" class="md:flex justify-center py-5 md:divide-x-2   items-center text-center">
+      <p class="px-2">Powered By JMD</p>
+      <p class="px-2">Copyright © 2024 JMD</p>
     </div>
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+  integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/split-type@0.3.3"></script>
+<script>
+  const width = window.innerWidth;
+  gsap.to("#box", {
+    duration: 3, // Duration of the animation
+    x: 100,
+    y: -400,
+    rotation: 360, // Rotate 360 degrees
+    backgroundColor: "#e88d67", // Change background color
+    borderRadius: "50%", // Make the box circular
+    ease: "power2.inOut", // Easing function
+    yoyo: true, // Make the animation reverse back and forth
+    repeat: -1, // Repeat indefinitely
+  });
+  gsap.to("#box2", {
+    duration: 3, // Duration of the animation
+    x: 100,
+    y: -400,
+    rotation: 720, // Rotate 360 degrees
+    backgroundColor: "#e88d67", // Change background color
+    borderRadius: "50%", // Make the box circular
+    ease: "power2.inOut", // Easing function
+    yoyo: true, // Make the animation reverse back and forth
+    repeat: -1, // Repeat indefinitely
+  });
+  gsap.to("#boll", {
+    duration: 2, // Duration of the animation
+    x: 100,
+    rotation: 360, // Rotate 360 degrees
+    backgroundColor: "#e88d67", // Change background color
+    borderRadius: "50%", // Make the box circular
+    ease: "power2.inOut", // Easing function
+    yoyo: true, // Make the animation reverse back and forth
+    repeat: -1, // Repeat indefinitely
+  });
+  const myText = new SplitType("#my-text");
+
+  const svg = document.querySelector("svg.squiggle");
+  const path = svg.querySelector("path");
+
+  const scroll = () => {
+    const distance = window.scrollY;
+    const totalDistance = svg.clientHeight - window.innerHeight;
+
+    // const percentage = distance / totalDistance ;
+    const percentage = distance / totalDistance ;
+
+    const pathLength = path.getTotalLength();
+
+    path.style.strokeDasharray = `${pathLength}`;
+    path.style.strokeDashoffset = `${(pathLength + 2500) * (1 - percentage)}`;
+  };
+  scroll();
+  window.addEventListener("scroll", scroll);
+</script>
 </body>
 
 </html>
+
+
